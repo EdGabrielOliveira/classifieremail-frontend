@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className="font-sans antialiased ">
-        <div className="flex flex-col flex-1 items-center max-w-[100%] w-full h-screen gap-8 bg-gradient-to-br from-gray-950 via-gray-800 to-blue-950/60 p-4">
+        <div className="flex flex-col flex-1 items-center w-full min-h-screen gap-8 bg-gradient-to-br from-gray-950 via-gray-800 to-blue-950/60 p-4">
           <Header />
           {children}
         </div>

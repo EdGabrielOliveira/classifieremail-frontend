@@ -9,7 +9,7 @@ export default function Homepage() {
   const navStyle = "bg-gray-200/80 hover:bg-gray-200/50 text-gray-950 font-bold p-3 xs:p-4 rounded-2xl";
 
   return (
-    <>
+    <div className="h-full">
       <Card
         title={"Bem-vindo ao Classifier E-mail"}
         content={"Sua solução inteligente para organização e classificação de e-mails."}
@@ -59,6 +59,6 @@ export default function Homepage() {
           </Link>
         </div>
       </Card>
-    </>
+    </div>
   );
 }
