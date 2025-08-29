@@ -34,11 +34,13 @@ export default function EmailResultCard({ result, loading = false, onBack }: Ema
               </p>
               <p
                 className={
-                  result.rating > "7"
+                  result.rating >= "7"
                     ? "bg-green-800 p-2 rounded-xl"
-                    : result.rating > "4"
+                    : result.rating >= "4"
                     ? "bg-yellow-600 p-2 rounded-xl"
-                    : "bg-red-700 p-2 rounded-xl"
+                    : result.rating >= "0"
+                    ? "bg-red-700 p-2 rounded-xl"
+                    : "bg-gray-700 p-2 rounded-xl"
                 }
               >
                 <strong>Rating:</strong> {result.rating}
