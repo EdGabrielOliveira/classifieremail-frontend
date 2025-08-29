@@ -5,7 +5,7 @@ import { EmailResult } from "../../core/types/email.types";
 import Button from "../../core/components/Button";
 import Card from "../../core/components/Card";
 import Loading from "../../core/components/Loading";
-import { CloudUpload, Download, Upload, X } from "lucide-react";
+import { Download, Upload, X } from "lucide-react";
 import EmailResultCard from "../../core/components/EmailResultCard";
 import { fileSchema } from "@/core/validations/emailFileSchema";
 import { emailFilePDFRouter, emailFileTXTRouter } from "@/core/routers/emailFile.router";
@@ -199,7 +199,6 @@ export default function EmailFilterFile() {
                   className="w-full xs:w-auto px-6 xs:px-8 text-sm xs:text-base"
                   nome="Enviar arquivo"
                   disabled={loading || !file}
-                  icon={<CloudUpload className="w-4 h-4" />}
                 />
               </div>
             </form>
