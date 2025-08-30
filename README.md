@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ClassifierEmail Frontend
 
-## Getting Started
+Plataforma web para classificação automática de e-mails, análise de estatísticas NLP e sugestão de respostas, utilizando
+inteligência artificial (GPT-4o Mini).
 
-First, run the development server:
+## Funcionalidades
+
+- Classificação de e-mails por texto ou arquivo (PDF/TXT)
+- Exibição de estatísticas NLP destacadas
+- Sugestão automática de resposta
+- Interface responsiva e otimizada para UX
+- Integração segura com backend via API
+
+## Tecnologias Utilizadas
+
+- **Next.js** (App Router)
+- **React** (TypeScript)
+- **Tailwind CSS** (estilização e responsividade)
+- **Yup** (validação de formulários)
+- **Lucide React** (ícones)
+
+## Estrutura do Projeto
+
+```
+src/
+  app/
+    page.tsx            # Página inicial
+    emailform/page.tsx  # Formulário de texto
+    emailfile/page.tsx  # Upload de arquivo
+    api/email/          # Rotas de API (form, pdf, txt)
+    layout.tsx          # Layout base
+    globals.css         # Estilos globais
+  core/
+    components/         # Componentes reutilizáveis
+      Card.tsx
+      Header.tsx
+      EmailResultCard.tsx
+      Button.tsx
+      CopyButton.tsx
+      Loading.tsx
+      Input.tsx
+    api/
+      internal-fetcher.ts # Função centralizada de requisições
+    routers/
+      emailForm.router.ts # Lógica do formulário
+      emailFile.router.ts # Lógica do upload
+    types/
+      email.types.ts      # Tipos TypeScript
+    validations/
+      emailFormSchema.ts  # Validação do formulário
+      emailFileSchema.ts  # Validação do upload
+public/                  # Imagens e ícones
+.env.local                # Variáveis de ambiente (API_URL, API_KEY)
+```
+
+## Como Executar
+
+1. Instale as dependências:
+
+```bash
+npm install
+```
+
+2. Configure o arquivo `.env.local` com sua API_URL e API_KEY.
+3. Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Acesse [http://localhost:3000](http://localhost:3000) no navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Configuração de Variáveis de Ambiente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# AVISO: Acesso apenas para rodar local, chaves sem acesso ao projeto principal.
 
-## Learn More
+Crie um arquivo `.env.local` na raiz do projeto com o seguinte conteúdo:
 
-To learn more about Next.js, take a look at the following resources:
+```env
+API_URL=http://0.0.0.0:8000
+API_KEY= 2118AEFCFF48F2F4B82D627B75673
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> **Atenção:**
+>
+> - Esta chave de API é liberada apenas para análise e testes da vaga.
+> - Não utilize em produção ou compartilhe fora do contexto da avaliação.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Fluxo de Uso
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Acesse a página inicial.
+2. Escolha entre classificar por texto ou arquivo.
+3. Preencha o formulário ou faça upload do arquivo.
+4. Visualize o resultado, estatísticas NLP e resposta sugerida.
+5. Copie a resposta ou volte para nova classificação.
