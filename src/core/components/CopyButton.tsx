@@ -10,7 +10,7 @@ export default function CopyButton({ text }: { text: string }) {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // volta ao normal depois de 2s
+      setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       console.error("Erro ao copiar:", err);
     }
