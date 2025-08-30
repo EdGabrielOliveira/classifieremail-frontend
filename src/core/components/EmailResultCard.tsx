@@ -27,7 +27,13 @@ export default function EmailResultCard({ result, loading = false, onBack }: Ema
             <div className="flex justify-between w-full">
               <p
                 className={`break-words ${
-                  result.classificacao === "Improdutivo" ? "bg-red-700 p-2 rounded-xl" : "bg-green-700 p-2 rounded-xl"
+                  result.classificacao === "Improdutivo" || result.classificacao === "IMPRODUTIVO"
+                    ? "bg-red-700 p-2 rounded-xl"
+                    : result.classificacao === "Produtivo" || result.classificacao === "PRODUTIVO"
+                    ? "bg-green-700 p-2 rounded-xl"
+                    : result.classificacao !== "Produtivo" && result.classificacao !== "Improdutivo"
+                    ? "bg-yellow-600 p-2 rounded-xl"
+                    : ""
                 }`}
               >
                 <strong>Classificação:</strong> {result.classificacao}
