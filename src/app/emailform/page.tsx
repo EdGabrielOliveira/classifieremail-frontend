@@ -71,6 +71,22 @@ export default function EmailFilterForm() {
     setOpenFunctions((prev) => !prev);
   };
 
+  const handleAplicarProdutivo = () => {
+    setRemetente("gabriel@empresa.com");
+    setAssunto("Preciso com ajuda com bugs no deploy da aplicação");
+    setDescricao(
+      "Estou enfrentando dificuldades com o deploy da aplicação e preciso de ajuda. Quero marcar uma reunião para discutir isso o mais rápido possível.",
+    );
+  };
+
+  const handleAplicarImprodutivo = () => {
+    setRemetente("joao@empresa.com");
+    setAssunto("Convite para happy hour");
+    setDescricao(
+      "Olá equipe! Estou organizando um happy hour hoje após o expediente. Quem quiser participar, será muito bem-vindo. Vamos relaxar e conversar!",
+    );
+  };
+
   return (
     <>
       <Card title={"Classificação de E-mails"} content={"Preencha os campos abaixo para classificar o e-mail."}>
@@ -163,6 +179,20 @@ export default function EmailFilterForm() {
                       variant="secondary"
                       type="button"
                       onClick={limparCampos}
+                      className="flex-1 text-xs xs:text-sm"
+                    />
+                    <Button
+                      nome="Formulário Produtivo"
+                      variant="secondary"
+                      type="button"
+                      onClick={handleAplicarProdutivo}
+                      className="flex-1 text-xs xs:text-sm"
+                    />
+                    <Button
+                      nome="Formulário Improdutivo"
+                      variant="secondary"
+                      type="button"
+                      onClick={handleAplicarImprodutivo}
                       className="flex-1 text-xs xs:text-sm"
                     />
                   </div>
